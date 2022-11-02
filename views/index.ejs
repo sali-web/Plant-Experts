@@ -1,0 +1,152 @@
+<!-- <h1>Hello World</h1> -->
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+      <img src="/img/contact.jpg" width="800px" height="800px" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="PlantExpert">
+    </div>
+  
+    <div class="col-12 col-lg-6">
+      <h1 class="display-6 fw-bold mb-3">Be a confident Plant Parent</h1>
+      <p class="lead">
+        Gain confidence with taking care of plants through simple plant care tips
+      </p>
+  
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="/Buynow" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Buy plant guides now</a>
+        <a href="/viewall" class="btn btn-outline-secondary btn-lg px-4 me-md-2">View all plant guides</a>
+      </div>
+  
+    </div>
+  
+  </div>
+
+
+<!--categories start-->
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+  <% if(categoriesList != '') { %>
+    <% categoriesList.forEach(function(category, index) { %>
+      <a href="/categoriesList/<%= category.name %>" class="col text-center category__link">
+        <div class="category__img shadow">
+          <img src="img/<%= category.image%>" alt="<%= category.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%= category.name %></div>
+      </a>
+    <% }) %>
+  <% } %>
+
+    <!-- <a href="/categoriesList" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="img/viewall.jpg" alt="Plant" loading="lazy">
+          </div>
+          <div class="pt-1">View All</div>
+    </a>-->
+</div> 
+
+<!--categories End-->
+
+<!--Indoor Plants-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+      <h2>Indoor Plants</h2>
+      <a href="/explore-Indoor" class="ms-auto"></a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <% if(indoor!== '') { %>
+        <% indoor.forEach(function(caretips, index){ %>
+        <a href="/CareTips/<%=caretips._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="img/<%=caretips.image%>" alt="<%= caretips.name %>" loading="lazy">
+          </div>
+          <div class="pt-1"><%=caretips.name%></div>
+        </a>
+        <% }) %>
+      <% } else { %>
+        <p>No items found.</p>
+      <% } %>
+
+    </div>
+
+</section>
+<!--Indoor ends-->
+
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Rare Plants</h2>
+    <a href="/explore-Rare" class="ms-auto"></a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(rare!== '') { %>
+      <% rare.forEach(function(caretips, index){ %>
+      <a href="/CareTips/<%=caretips._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="img/<%=caretips.image%>" alt="<%= caretips.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%=caretips.name%></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Hanging Plants</h2>
+    <a href="/explore-Hanging" class="ms-auto"></a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(hanging!== '') { %>
+      <% hanging.forEach(function(caretips, index){ %>
+      <a href="/CareTips/<%=caretips._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="img/<%=caretips.image%>" alt="<%= caretips.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%=caretips.name%></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+
+<section class="pb-4 pt-4">
+  <div class="d-flex mb-2 align-items-center">
+    <h2>Succulents</h2>
+    <a href="/explore-Succulent" class="ms-auto"></a>
+  </div>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(succulent!== '') { %>
+      <% succulent.forEach(function(caretips, index){ %>
+      <a href="/CareTips/<%=caretips._id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+          <img src="img/<%=caretips.image%>" alt="<%= caretips.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%=caretips.name%></div>
+      </a>
+      <% }) %>
+    <% } else { %>
+      <p>No items found.</p>
+    <% } %>
+  </div>
+</section>
+
+
+<!-- submit -->
+<!-- <section class="px-4 py-5 my-5 text-center">
+    <img src="/img/slider1.jpg" class="d-block mx-auto mb-4 img-fluid" alt="Publish  for FREE today" width="566" height="208" loading="lazy">
+    <h1 class="display-5 fw-bold">Feel free to add your care tips</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">You can help by adding your expertises</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/submit" class="btn btn-primary btn-dark btn-lg">Submit </a>
+      </div>
+    </div>
+  </section> -->

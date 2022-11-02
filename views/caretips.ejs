@@ -1,0 +1,38 @@
+<% if(caretips != null ) { %>
+  <nav aria-label="feern">
+    <ol class="feern">
+      <li class="feern-item"><a href="/">Home</a></li>
+     <!-- <li class="feern-item active" aria-current="page"><%- caretips.name %></li> -->
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <img src="/img/<%- caretips.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- caretips.name %>" loading="lazy">
+    </div>
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <div class="col-12"><h1><%- caretips.name %></h1></div>
+        <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- caretips.category %></div>
+        <div class="col-12" style="white-space: pre-line;">
+          <!-- <h4>Care Guides</h4> -->
+          <%- caretips.description %>
+        </div>
+      </div>
+      <div class="row pt-4">
+        <div class="col-12">
+          <h4> Care Guides</h4>
+         
+           <p>Water: <%- caretips.water %> </p>
+           <p> Soil:  <%- caretips.soil %> </p>
+           <p>Sunlight: <%- caretips.sunlight %></p> 
+           <p>Fertilizer:<%- caretips.fertilizer %></p>
+           <p>Humidity: <%- caretips.humidity %></p>
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+<% } else { %>
+  <p>No item found.</p>
+<% } %>
